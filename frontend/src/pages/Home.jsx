@@ -18,7 +18,7 @@ export default function Home() {
   return (
     <main className="home">
       <div className="home__hero">
-        <h1 className="home__titulo">🇦🇷 Selección Argentina</h1>
+        <h1 className="home__titulo">Selección Argentina</h1>
         <p className="home__subtitulo">
           Conocé a los jugadores que llevaron a Argentina a lo más alto del fútbol mundial.
         </p>

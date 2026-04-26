@@ -11,7 +11,7 @@ export default function App() {
   return (
     <FavoritosProvider>
       <BrowserRouter>
-        <Navbar titulo="🇦🇷 Albiceleste" />
+        <Navbar titulo="Albiceleste" />
         <Routes>
           <Route path="/"               element={<Home />}      />
           <Route path="/jugadores"      element={<Jugadores />} />

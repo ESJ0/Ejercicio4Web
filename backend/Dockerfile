@@ -1,5 +1,8 @@
 FROM node:20-alpine
 
+# better-sqlite3 necesita herramientas de compilación nativas
+RUN apk add --no-cache python3 make g++
+
 WORKDIR /app
 
 COPY package.json .
@@ -7,7 +10,6 @@ RUN npm install
 
 COPY . .
 
-# Crea la base de datos y la pobla al momento de buildear
 RUN node db/seed.js
 
 EXPOSE 4000
