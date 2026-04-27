@@ -7,7 +7,7 @@ export default function Buscador({ busqueda, onBusqueda, posicion, onPosicion })
     <div className="buscador">
       <input
         type="text"
-        placeholder="Buscar por nombre, apodo o club..."
+        placeholder="Buscar por nombre o apellido..."
         value={busqueda}
         onChange={(e) => onBusqueda(e.target.value)}
         className="buscador__input"
