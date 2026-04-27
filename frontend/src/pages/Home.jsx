@@ -18,6 +18,11 @@ export default function Home() {
   return (
     <main className="home">
       <div className="home__hero">
+        <img
+          src="/afa-logo.png"
+          alt="Logo AFA"
+          className="home__logo"
+        />
         <h1 className="home__titulo">Selección Argentina</h1>
         <p className="home__subtitulo">
           Conocé a los jugadores que llevaron a Argentina a lo más alto del fútbol mundial.
@@ -27,7 +32,7 @@ export default function Home() {
             Ver todos los jugadores
           </button>
           <button onClick={irAleatorio} className="btn btn--secundario">
-            🎲 Jugador aleatorio
+            Jugador aleatorio
           </button>
         </div>
       </div>

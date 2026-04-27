@@ -6,6 +6,7 @@ services:
       - "4000:4000"
     environment:
       PORT: 4000
+      API_FOOTBALL_KEY: ${API_FOOTBALL_KEY}
 
   frontend:
     build:

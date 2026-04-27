@@ -1,6 +1,6 @@
 # 🇦🇷 Argentina Blog
 
-Mini-blog sobre los jugadores de la Selección Argentina construido con **Vite + React + React Router** en el frontend y **Node.js + Express + SQLite** en el backend.
+Mini-blog sobre los jugadores de la Selección Argentina en el **Mundial Qatar 2022**, construido con **Vite + React + React Router** en el frontend y **Node.js + Express + SQLite** en el backend. Los datos de los jugadores se obtienen de [API-Football](https://www.api-football.com).
 
 ## Nivel apuntado: Senior ⭐
 
@@ -12,7 +12,7 @@ Mini-blog sobre los jugadores de la Selección Argentina construido con **Vite +
 - [x] Proyecto generado con `npm create vite@latest`
 - [x] `react-router-dom` v7 (compatible con v6 API)
 - [x] Mínimo 3 rutas: `/`, `/jugadores`, `/jugadores/:id`
-- [x] Datos en base de datos SQLite, no hardcodeados en componentes
+- [x] Datos en base de datos SQLite consumidos desde la API, no hardcodeados en componentes
 - [x] `useParams` en página de detalle
 - [x] Navegación con `<Link>`, sin `<a>`
 - [x] README con instrucciones para correr el proyecto
@@ -27,7 +27,7 @@ Mini-blog sobre los jugadores de la Selección Argentina construido con **Vite +
 ### Senior
 - [x] Estado global con Context API (favoritos)
 - [x] 3 componentes con PropTypes definidos: `Navbar`, `JugadorCard`, `Buscador`
-- [x] Base de datos SQLite con 20 jugadores reales
+- [x] Base de datos SQLite poblada desde API-Football con jugadores reales del Mundial Qatar 2022
 
 ---
 
@@ -36,6 +36,7 @@ Mini-blog sobre los jugadores de la Selección Argentina construido con **Vite +
 - **Frontend:** Vite, React 19, React Router v7, PropTypes
 - **Backend:** Node.js, Express 5, better-sqlite3
 - **Base de datos:** SQLite
+- **API externa:** [API-Football](https://www.api-football.com)
 - **Infraestructura:** Docker + Docker Compose
 
 ---
@@ -57,11 +58,24 @@ Mini-blog sobre los jugadores de la Selección Argentina construido con **Vite +
 ```bash
 git clone https://github.com/tu-usuario/argentina-blog.git
 cd argentina-blog
+```
+
+Creá un archivo `.env` en la raíz con tu API key:
+
+```
+API_FOOTBALL_KEY=tu_api_key_aqui
+```
+
+Luego levantás los contenedores:
+
+```bash
 docker-compose up --build
 ```
 
 - Frontend → http://localhost:3000
 - Backend  → http://localhost:4000
+
+> La primera vez que levanta, el backend obtiene automáticamente los jugadores de API-Football y los guarda en SQLite.
 
 ---
 
@@ -72,6 +86,15 @@ docker-compose up --build
 ```bash
 cd backend
 npm install
+```
+
+Creá `backend/.env`:
+
+```
+API_FOOTBALL_KEY=tu_api_key_aqui
+```
+
+```bash
 npm run seed
 npm run dev
 ```
@@ -86,12 +109,13 @@ npm install
 npm run dev
 ```
 
-La app queda en http://localhost:5173
+Creá `frontend/.env`:
 
-> Asegurate de tener el archivo `frontend/.env` con el siguiente contenido:
-> ```
-> VITE_API_URL=http://localhost:4000
-> ```
+```
+VITE_API_URL=http://localhost:4000
+```
+
+La app queda en http://localhost:5173
 
 ---
 
@@ -129,8 +153,8 @@ Tarjeta de jugador con imagen, stats y botón de favorito. Navega al detalle al 
 | `jugador.club` | `string` | ✓ | Club actual |
 | `jugador.apodo` | `string` | — | Apodo del jugador |
 | `jugador.dorsal` | `number` | — | Número de camiseta |
-| `jugador.goles` | `number` | — | Goles en la selección |
-| `jugador.asistencias` | `number` | — | Asistencias en la selección |
+| `jugador.goles` | `number` | — | Goles en el torneo |
+| `jugador.asistencias` | `number` | — | Asistencias en el torneo |
 | `jugador.partidos` | `number` | — | Partidos jugados |
 | `jugador.imagen_url` | `string` | — | URL de la foto |
 

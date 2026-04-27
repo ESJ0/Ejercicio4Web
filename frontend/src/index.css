@@ -9,9 +9,9 @@
 }
 
 :root {
-    --azul: #0a3d7c;
-    --azul-medio: #1a5fa8;
-    --azul-claro: #e8f0fb;
+    --azul: #3a9eeb;
+    --azul-medio: #609aec;
+    --azul-claro: #d8e8ff;
     --dorado: #f0c040;
     --blanco: #ffffff;
     --gris-claro: #f5f5f5;
@@ -163,6 +163,13 @@ img {
     gap: 1rem;
     justify-content: center;
     flex-wrap: wrap;
+}
+
+.home__logo {
+    width: 140px;
+    height: auto;
+    margin: 0 auto 1.5rem;
+    display: block;
 }
 
 
