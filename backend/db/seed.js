@@ -70,7 +70,7 @@ async function main() {
             partidos: stats.games?.appearences || 0,
             goles: stats.goals?.total || 0,
             asistencias: stats.goals?.assists || 0,
-            descripcion: `Jugador de la Selección Argentina en el Mundial Qatar 2022. Club durante el torneo: ${stats.team?.name || 'N/A'}.`,
+            descripcion: `Jugador de la Selección Argentina en el Mundial Qatar 2022.`,
             imagen_url: player.photo
         }
     })
